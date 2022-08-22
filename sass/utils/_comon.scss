@@ -1,0 +1,31 @@
+.container {
+  max-width: 480px;
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  @media screen and(min-width: $tablet) {
+    max-width: 768px;
+  }
+  @media screen and(min-width: $desctop) {
+    max-width: 1200px;
+  }
+}
+
+%style-after::after {
+  content: "";
+  position: absolute;
+  width: 1%;
+  display: inline-block;
+  height: 3px;
+  background-color: transparent;
+  bottom: 0;
+  right: 0;
+  transition: background-color 230ms linear, width 250ms ease;
+}
+
+%hover-link:hover::after,
+%hover-link:focus::after {
+  background-color: rgb(248, 244, 5);
+  width: 100%;
+}
